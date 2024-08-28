@@ -1,0 +1,160 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+        padding: 20px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+/* Atualização da cor de fundo e estilo do body */
+body {
+    background-color: #0c223f; /* Cor de fundo do site */
+    font-family: Arial, sans-serif;
+    margin-top: 60px; /* Espaçamento para evitar sobreposição com o cabeçalho fixo */
+}
+
+/* Estilo para o novo cabeçalho abaixo do cabeçalho principal */
+.secondary-header {
+    background-color: #0c223f; /* Mesma cor de fundo para consistência */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0; /* Reduzido o padding para mover o conteúdo para cima */
+    position: relative; /* Permite o uso de posicionamento absoluto para filhos */
+}
+
+.secondary-header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+    justify-content: flex-start; /* Mantém o conteúdo no topo */
+    height: 100%; /* Ajusta a altura para garantir o alinhamento correto */
+}
+
+.secondary-header .icon {
+    font-size: 40px; /* Tamanho do ícone */
+    color: #007bff; /* Cor azul para o ícone */
+    margin-bottom: -10px; /* Mover o ícone mais perto do texto */
+}
+
+.secondary-header .text h1 {
+    font-size: 24px;
+    margin-top: 5px; /* Espaçamento entre o ícone e o título */
+    margin-bottom: 5px; /* Espaçamento reduzido entre o título e o subtítulo */
+}
+
+.secondary-header .text p {
+    font-size: 16px;
+    color: #ccc; /* Cor cinza clara para o subtítulo */
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    /* Ajustes de estilos para dispositivos móveis */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+        padding: 20px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+.secondary-header .text p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 0;
+    font-weight: bold; /* Adiciona negrito ao texto */
+}
