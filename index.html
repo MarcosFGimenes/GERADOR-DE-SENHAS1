@@ -45,6 +45,29 @@
                 <button id="generate-btn">GERAR SENHA</button>
                 <button id="copy-btn">COPIAR SENHA</button>
             </div>
+
+            <!-- Personalização da senha -->
+            <div class="password-options">
+                <label for="length">Número de caracteres:</label>
+                <button id="decrease-btn">-</button>
+                <input type="number" id="length" value="12" min="4" max="20">
+                <button id="increase-btn">+</button>
+
+                <div class="checkboxes">
+                    <label>
+                        <input type="checkbox" id="include-uppercase" checked> Letras maiúsculas
+                    </label>
+                    <label>
+                        <input type="checkbox" id="include-lowercase" checked> Letras minúsculas
+                    </label>
+                    <label>
+                        <input type="checkbox" id="include-numbers" checked> Números
+                    </label>
+                    <label>
+                        <input type="checkbox" id="include-special" checked> Caracteres especiais
+                    </label>
+                </div>
+            </div>
         </div>
     </div>
 

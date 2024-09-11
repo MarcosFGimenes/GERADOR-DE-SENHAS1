@@ -5,32 +5,47 @@ document.addEventListener("DOMContentLoaded", function () {
     const copyBtn = document.getElementById("copy-btn");
     const passwordField = document.getElementById("password-field");
 
-    // Função para gerar uma senha aleatória
+    // Personalização
+    const lengthInput = document.getElementById("length");
+    const increaseBtn = document.getElementById("increase-btn");
+    const decreaseBtn = document.getElementById("decrease-btn");
+    const includeUppercase = document.getElementById("include-uppercase");
+    const includeLowercase = document.getElementById("include-lowercase");
+    const includeNumbers = document.getElementById("include-numbers");
+    const includeSpecial = document.getElementById("include-special");
+
+    // Função para gerar senha aleatória
     function generatePassword() {
-        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+        const length = parseInt(lengthInput.value);
+        let characters = "";
+        if (includeUppercase.checked) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (includeLowercase.checked) characters += "abcdefghijklmnopqrstuvwxyz";
+        if (includeNumbers.checked) characters += "0123456789";
+        if (includeSpecial.checked) characters += "!@#$%^&*()_+[]{}|;:,.<>?";
+
         let password = "";
-        for (let i = 0; i < 12; i++) {
-            const randomIndex = Math.floor(Math.random() * charset.length);
-            password += charset[randomIndex];
+        for (let i = 0; i < length; i++) {
+            password += characters.charAt(Math.floor(Math.random() * characters.length));
         }
-        return password;
+        passwordField.value = password;
     }
 
-    // Gera a senha e insere no campo de texto
-    generateBtn.addEventListener("click", function () {
-        const password = generatePassword();
-        passwordField.value = password;
+    // Gerar senha ao clicar no botão
+    generateBtn.addEventListener("click", generatePassword);
+
+    // Copiar senha ao clicar no botão
+    copyBtn.addEventListener("click", function () {
+        passwordField.select();
+        document.execCommand("copy");
     });
 
-    // Copia a senha gerada para a área de transferência
-    copyBtn.addEventListener("click", function () {
-        if (passwordField.value) {
-            passwordField.select();
-            document.execCommand("copy");
-            alert("Senha copiada para a área de transferência!");
-        } else {
-            alert("Nenhuma senha gerada para copiar!");
-        }
+    // Aumentar e diminuir o valor da quantidade de caracteres
+    increaseBtn.addEventListener("click", function () {
+        if (lengthInput.value < 20) lengthInput.value = parseInt(lengthInput.value) + 1;
+    });
+
+    decreaseBtn.addEventListener("click", function () {
+        if (lengthInput.value > 4) lengthInput.value = parseInt(lengthInput.value) - 1;
     });
 
     menuToggle.addEventListener("click", function () {

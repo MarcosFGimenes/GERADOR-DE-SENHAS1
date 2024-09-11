@@ -172,4 +172,12 @@ body {
     text-align: center;
     letter-spacing: 2px; /* Espaçamento entre as letras */
     font-family: 'Arial Black', sans-serif;
+    margin: 0 auto; /* Centraliza o texto horizontalmente */
+}
+
+/* Alinhar o logo/texto no centro da área do cabeçalho */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
 }
