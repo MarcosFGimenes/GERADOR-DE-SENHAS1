@@ -129,3 +129,47 @@ body {
     margin-bottom: 0;
     font-weight: bold; /* Adiciona negrito ao texto */
 }
+
+/* Estilos para o gerador de senha */
+.password-generator {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#password-field {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+#generate-btn, #copy-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #006eff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#generate-btn:hover, #copy-btn:hover {
+    background-color: #0056cc
+}
+
+/* Estilo do texto impactante no lugar da logo */
+.impact-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fd0000; /* Cor vermelha impactante */
+    text-transform: uppercase; /* Todas as letras em maiúsculas */
+    text-align: center;
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    font-family: 'Arial Black', sans-serif;
+}
