@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
+    <title>Gerador de Senhas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,14 +11,10 @@
     <header>
         <div class="container">
             <div class="logo">
-                <!-- Texto substituindo a imagem da logo -->
-                <h1 class="impact-text">MARQUIN DO GRAU, ADRIANO FRANCISCO E THIAGO MOITA</h1>
+                <a href="#">MARQUIN DO GRAU, ADRIANO FRANCISCO E THIAGO MOITA</a>
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#">  </a></li>
-                    <li><a href="#">  </a></li>
-                    <li><a href="#">  </a></li>
                     <li><a href="#">  </a></li>
                 </ul>
             </nav>
@@ -39,9 +35,9 @@
                 <p>Gere instantaneamente uma senha aleatória e segura</p>
             </div>
 
-            <!-- Caixa de texto e botão de gerar senha -->
-            <div class="password-generator">
-                <input type="text" id="password-field" placeholder="Senha gerada aqui" readonly>
+            <!-- Campo de senha e botões -->
+            <div class="password-container">
+                <input type="text" id="password-field" readonly>
                 <button id="generate-btn">GERAR SENHA</button>
                 <button id="copy-btn">COPIAR SENHA</button>
             </div>
@@ -67,6 +63,11 @@
                         <input type="checkbox" id="include-special" checked> Caracteres especiais
                     </label>
                 </div>
+
+                <!-- Opção de gerar senha com palavras reais -->
+                <label>
+                    <input type="checkbox" id="use-real-words"> Palavras reais?
+                </label>
             </div>
         </div>
     </div>

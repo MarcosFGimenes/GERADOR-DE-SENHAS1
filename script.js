@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
     const generateBtn = document.getElementById("generate-btn");
     const copyBtn = document.getElementById("copy-btn");
     const passwordField = document.getElementById("password-field");
 
-    // Personalização
     const lengthInput = document.getElementById("length");
     const increaseBtn = document.getElementById("increase-btn");
     const decreaseBtn = document.getElementById("decrease-btn");
@@ -13,9 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const includeLowercase = document.getElementById("include-lowercase");
     const includeNumbers = document.getElementById("include-numbers");
     const includeSpecial = document.getElementById("include-special");
+    const useRealWords = document.getElementById("use-real-words");
+
+    // Lista de palavras reais
+    const wordsList = [
+        "casa", "cachorro", "carro", "livro", "mesa", "computador", "escola", "banana",
+        "telefone", "cadeira", "janela", "porta", "sol", "luz", "chave", "agua", "fogo", "terra"
+    ];
+
+    // Função para gerar senha com palavras reais
+    function generateRealWordsPassword(length) {
+        let password = "";
+        while (password.length < length) {
+            let word = wordsList[Math.floor(Math.random() * wordsList.length)];
+            password += word;
+        }
+        return password.slice(0, length);
+    }
 
     // Função para gerar senha aleatória
-    function generatePassword() {
+    function generateRandomPassword() {
         const length = parseInt(lengthInput.value);
         let characters = "";
         if (includeUppercase.checked) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -27,13 +41,24 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < length; i++) {
             password += characters.charAt(Math.floor(Math.random() * characters.length));
         }
-        passwordField.value = password;
+        return password;
     }
 
-    // Gerar senha ao clicar no botão
+    // Função principal de geração de senha
+    function generatePassword() {
+        const length = parseInt(lengthInput.value);
+
+        if (useRealWords.checked) {
+            passwordField.value = generateRealWordsPassword(length);
+        } else {
+            passwordField.value = generateRandomPassword();
+        }
+    }
+
+    // Evento para gerar senha ao clicar no botão
     generateBtn.addEventListener("click", generatePassword);
 
-    // Copiar senha ao clicar no botão
+    // Evento para copiar senha ao clicar no botão
     copyBtn.addEventListener("click", function () {
         passwordField.select();
         document.execCommand("copy");
@@ -46,9 +71,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     decreaseBtn.addEventListener("click", function () {
         if (lengthInput.value > 4) lengthInput.value = parseInt(lengthInput.value) - 1;
-    });
-
-    menuToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
     });
 });
