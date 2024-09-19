@@ -181,3 +181,114 @@ body {
     align-items: center;
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
 }
+
+/* Estilo para o rodapé */
+footer {
+    position: relative;
+    background-color: #0c223f;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container para os cadeados */
+.locks-container {
+    position: absolute;
+    display: flex;
+    gap: 50px; /* Espaçamento entre os cadeados */
+    top: 20px; /* Ajuste para evitar o corte no topo */
+    left: 0;
+    width: 150vw; /* Ajuste para permitir que os cadeados cubram a largura */
+    animation: moveLocks 10s linear infinite; /* Movimento mais lento */
+}
+
+/* Estilo dos cadeados */
+.lock {
+    font-size: 48px;
+    position: relative;
+    animation: wave 3s ease-in-out infinite; /* Animação de onda */
+}
+
+/* Animação de mover os cadeados da esquerda para a direita */
+@keyframes moveLocks {
+    0% {
+        transform: translateX(-50vw); /* Começa fora da tela à esquerda */
+    }
+    100% {
+        transform: translateX(100vw); /* Sai da tela pela direita */
+    }
+}
+
+/* Animação de onda, fazendo os cadeados subirem e descerem */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-15px); /* Subir levemente no meio da animação */
+    }
+}
+
+/* Estilo para o botão TERROR */
+.terror-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.terror-button {
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Comic Sans MS', sans-serif; /* Estilo cômico */
+}
+
+.terror-button:hover {
+    background-color: darkred;
+}
+
+/* Estilo para o overlay de terror */
+.terror-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.terror-message {
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    animation: flicker 1.5s infinite alternate; /* Efeito de piscar */
+}
+
+/* Animação de flicker para a mensagem */
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
