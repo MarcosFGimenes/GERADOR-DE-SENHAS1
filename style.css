@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Estilo do cabeçalho */
+/* Estilo do cabeçalho principal */
 header {
     background-color: #006eff;
     padding: 20px 0;
@@ -15,6 +15,7 @@ header {
     z-index: 1000;
 }
 
+/* Container do cabeçalho */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -24,6 +25,7 @@ header {
     justify-content: space-between;
 }
 
+/* Estilo do link da logo */
 .logo a {
     text-decoration: none;
     font-size: 24px;
@@ -31,29 +33,34 @@ header {
     font-weight: bold;
 }
 
+/* Estilo do menu de navegação */
 .nav-menu ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
+/* Estilo dos links do menu */
 .nav-menu ul li a {
     text-decoration: none;
-    color: #00ff00; /* Cor verde para as opções do menu */
+    color: #00ff00;
     font-size: 18px;
-    transition: color 0.3s; /* Transição suave para o hover */
+    transition: color 0.3s;
 }
 
+/* Efeito hover nos links do menu */
 .nav-menu ul li a:hover {
-    color: #ff0000; /* Cor vermelha quando o mouse passa por cima */
+    color: #ff0000;
 }
 
+/* Estilo do botão de menu para dispositivos móveis */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
 
+/* Estilo das linhas do botão de menu */
 .menu-toggle span {
     height: 3px;
     width: 25px;
@@ -88,101 +95,105 @@ header {
     }
 }
 
-/* Atualização da cor de fundo e estilo do body */
+/* Estilo do corpo da página */
 body {
-    background-color: #0c223f; /* Cor de fundo do site */
+    background-color: #0c223f;
     font-family: Arial, sans-serif;
-    margin-top: 60px; /* Espaçamento para evitar sobreposição com o cabeçalho fixo */
+    margin-top: 60px;
 }
 
-/* Estilo para o novo cabeçalho abaixo do cabeçalho principal */
+/* Estilo do novo cabeçalho abaixo do cabeçalho principal */
 .secondary-header {
-    background-color: #0c223f; /* Mesma cor de fundo para consistência */
+    background-color: #0c223f;
     color: #fff;
     text-align: center;
-    padding: 100px 0; /* Reduzido o padding para mover o conteúdo para cima */
-    position: relative; /* Permite o uso de posicionamento absoluto para filhos */
+    padding: 60px 0;
 }
 
+/* Container do novo cabeçalho */
 .secondary-header .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente o conteúdo */
-    justify-content: flex-start; /* Mantém o conteúdo no topo */
-    height: 100%; /* Ajusta a altura para garantir o alinhamento correto */
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
 }
 
+/* Estilo do ícone no cabeçalho secundário */
 .secondary-header .icon {
-    font-size: 100px; /* Tamanho do ícone */
-    color: #ecf2f8; /* Cor azul para o ícone */
+    font-size: 100px;
+    color: #ecf2f8;
 }
 
+/* Estilo do título no cabeçalho secundário */
 .secondary-header .text h1 {
     font-size: 24px;
-    margin-top: 5px; /* Espaçamento entre o ícone e o título */
-    margin-bottom: 5px; /* Espaçamento reduzido entre o título e o subtítulo */
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
+/* Estilo do parágrafo no cabeçalho secundário */
 .secondary-header .text p {
     font-size: 16px;
     color: #ccc;
     margin-bottom: 0;
-    font-weight: bold; /* Adiciona negrito ao texto */
+    font-weight: bold;
 }
 
-/* Estilos para o gerador de senha */
-.password-generator {
-    margin-top: 20px;
+/* Estilo para o container da senha */
+.password-container {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
+/* Estilo do campo de senha */
 #password-field {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 600px;
+    padding: 20px;
+    font-size: 48px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
     background-color: #fff;
     color: #333;
+    text-align: center;
 }
 
+/* Estilo dos botões de gerar e copiar senha */
 #generate-btn, #copy-btn {
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 15px 30px;
+    font-size: 24px;
     color: #fff;
     background-color: #006eff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 10px 0;
 }
 
+/* Efeito hover nos botões */
 #generate-btn:hover, #copy-btn:hover {
-    background-color: #0056cc
+    background-color: #0056cc;
 }
 
-/* Estilo do texto impactante no lugar da logo */
-.impact-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fd0000; /* Cor vermelha impactante */
-    text-transform: uppercase; /* Todas as letras em maiúsculas */
-    text-align: center;
-    letter-spacing: 2px; /* Espaçamento entre as letras */
-    font-family: 'Arial Black', sans-serif;
-    margin: 0 auto; /* Centraliza o texto horizontalmente */
-}
-
-/* Alinhar o logo/texto no centro da área do cabeçalho */
-.container {
+/* Estilo para opções de personalização de senha */
+.password-options {
+    position: absolute;
+    right: 20px;
+    top: 100px;
     display: flex;
-    align-items: center;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-/* Estilo para o rodapé */
+/* Estilo das labels das checkboxes */
+.checkboxes label {
+    margin-bottom: 10px;
+}
+
+/* Estilo do rodapé */
 footer {
     position: relative;
     background-color: #0c223f;
@@ -193,41 +204,41 @@ footer {
     align-items: center;
 }
 
-/* Container para os cadeados */
+/* Container para os cadeados no rodapé */
 .locks-container {
     position: absolute;
     display: flex;
-    gap: 50px; /* Espaçamento entre os cadeados */
-    top: 20px; /* Ajuste para evitar o corte no topo */
+    gap: 50px;
+    top: 20px;
     left: 0;
-    width: 150vw; /* Ajuste para permitir que os cadeados cubram a largura */
-    animation: moveLocks 10s linear infinite; /* Movimento mais lento */
+    width: 150vw;
+    animation: moveLocks 10s linear infinite;
 }
 
 /* Estilo dos cadeados */
 .lock {
     font-size: 48px;
     position: relative;
-    animation: wave 3s ease-in-out infinite; /* Animação de onda */
+    animation: wave 3s ease-in-out infinite;
 }
 
 /* Animação de mover os cadeados da esquerda para a direita */
 @keyframes moveLocks {
     0% {
-        transform: translateX(-50vw); /* Começa fora da tela à esquerda */
+        transform: translateX(-50vw);
     }
     100% {
-        transform: translateX(100vw); /* Sai da tela pela direita */
+        transform: translateX(100vw);
     }
 }
 
 /* Animação de onda, fazendo os cadeados subirem e descerem */
 @keyframes wave {
     0%, 100% {
-        transform: translateY(0); /* Posição inicial */
+        transform: translateY(0);
     }
     50% {
-        transform: translateY(-15px); /* Subir levemente no meio da animação */
+        transform: translateY(-15px);
     }
 }
 
@@ -238,6 +249,7 @@ footer {
     right: 20px;
 }
 
+/* Estilo do botão TERROR */
 .terror-button {
     background-color: red;
     color: white;
@@ -251,9 +263,10 @@ footer {
     align-items: center;
     cursor: pointer;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    font-family: 'Comic Sans MS', sans-serif; /* Estilo cômico */
+    font-family: 'Comic Sans MS', sans-serif;
 }
 
+/* Efeito hover no botão TERROR */
 .terror-button:hover {
     background-color: darkred;
 }
@@ -272,12 +285,13 @@ footer {
     z-index: 10000;
 }
 
+/* Estilo da mensagem de terror */
 .terror-message {
     color: red;
     font-size: 50px;
     text-align: center;
     font-family: 'Courier New', monospace;
-    animation: flicker 1.5s infinite alternate; /* Efeito de piscar */
+    animation: flicker 1.5s infinite alternate;
 }
 
 /* Animação de flicker para a mensagem */
