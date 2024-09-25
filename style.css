@@ -207,6 +207,31 @@ body {
     margin-right: 10px;
 }
 
+/* Estilo do campo de número de caracteres */
+#length {
+    width: 80px; /* Largura aumentada */
+    padding: 10px; /* Aumento do espaçamento interno */
+    font-size: 24px; /* Aumento do tamanho da fonte */
+    margin: 10px 0; /* Margem para espaçamento */
+}
+
+/* Estilo dos botões de aumentar e diminuir caracteres */
+#decrease-btn, #increase-btn {
+    padding: 15px 20px; /* Aumento do tamanho */
+    font-size: 24px; /* Aumento do tamanho da fonte */
+    color: #fff;
+    background-color: #006eff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0; /* Espaçamento entre os botões */
+}
+
+/* Efeito hover nos botões de aumentar e diminuir */
+#decrease-btn:hover, #increase-btn:hover {
+    background-color: #0056cc;
+}
+
 /* Estilo do rodapé */
 footer {
     position: relative;
